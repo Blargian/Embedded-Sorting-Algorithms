@@ -1,0 +1,283 @@
+{
+  "Application": {
+    "Screens": [
+      {
+        "Name": "Main",
+        "CanvasBufferSize": 7200,
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "bg",
+            "Width": 480,
+            "Height": 272
+          },
+          {
+            "Type": "Button",
+            "Name": "button_select_algo",
+            "X": 397,
+            "Y": 50,
+            "Width": 64,
+            "Height": 64,
+            "Pressed": "algorithm.png",
+            "Released": "algorithm.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "button_randomize",
+            "X": 397,
+            "Y": 159,
+            "Width": 64,
+            "Height": 64,
+            "Pressed": "random.png",
+            "Released": "random.png"
+          },
+          {
+            "Type": "StaticGraph",
+            "Name": "histogram",
+            "X": 21,
+            "Y": 11,
+            "Width": 356,
+            "Height": 226,
+            "DataSeed": 766668840,
+            "NumberOfValues": 1000,
+            "MaxX": 256.0,
+            "PrecisionX": "1",
+            "MaxY": 256.0,
+            "PrecisionY": "1",
+            "XAxisScale": 1.0,
+            "InsertRandomValues": true,
+            "GraphDrawers": [
+              {
+                "Type": "HistogramDrawer",
+                "BarWidth": 4,
+                "Color": {
+                  "Red": 20,
+                  "Green": 151,
+                  "Blue": 197
+                }
+              }
+            ]
+          },
+          {
+            "Type": "Line",
+            "Name": "line1",
+            "X": 21,
+            "Y": 237,
+            "Width": 356,
+            "Height": 35,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "StartX": 5.0,
+            "StartY": 10.0,
+            "EndX": 350.0,
+            "EndY": 10.0,
+            "LineWidth": 10.0,
+            "LineEndingStyle": "Round"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "interaction_navigate_to_select",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_select_algo"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "Selector"
+            }
+          },
+          {
+            "InteractionName": "Interaction_randomize",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_randomize"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "randomizeGraph"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Selector",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "bg",
+            "Width": 480,
+            "Height": 272
+          },
+          {
+            "Type": "SwipeContainer",
+            "Name": "swipeContainer1",
+            "X": 14,
+            "Y": 10,
+            "Width": 454,
+            "Height": 250,
+            "SwipeCutoff": 50,
+            "ShowPageIndicator": true,
+            "IndicatorImageNormal": "__generated\\alternate_theme_images_widgets_swipecontainer_medium_off_normal.png",
+            "IndicatorImageHighlight": "__generated\\alternate_theme_images_widgets_swipecontainer_medium_on_active.png",
+            "EndSwipeElasticWidth": 50,
+            "SelectedPage": "QuickSort",
+            "Preset": "alternate_theme\\presets\\swipecontainer\\medium_active.json",
+            "Components": [
+              {
+                "Type": "Container",
+                "Name": "MergeSort",
+                "Width": 454,
+                "Height": 250,
+                "Components": [
+                  {
+                    "Type": "Image",
+                    "Name": "MergeSortIcon",
+                    "X": 39,
+                    "Y": 61,
+                    "Width": 128,
+                    "Height": 128,
+                    "RelativeFilename": "consolidate.png"
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "BubbleSort",
+                "Width": 454,
+                "Height": 250,
+                "Components": [
+                  {
+                    "Type": "Image",
+                    "Name": "BubbleSortIcon",
+                    "X": 39,
+                    "Y": 62,
+                    "Width": 128,
+                    "Height": 128,
+                    "RelativeFilename": "bubbles.png"
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "QuickSort",
+                "Width": 454,
+                "Height": 250,
+                "Components": [
+                  {
+                    "Type": "Image",
+                    "Name": "QuickSortIcon",
+                    "X": 39,
+                    "Y": 61,
+                    "Width": 128,
+                    "Height": 128,
+                    "RelativeFilename": "fast-time.png"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "select",
+            "X": 404,
+            "Y": 196,
+            "Width": 64,
+            "Height": 64,
+            "Pressed": "check-mark.png",
+            "Released": "check-mark_grey.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "back_to_main",
+            "X": 404,
+            "Y": 10,
+            "Width": 64,
+            "Height": 64,
+            "Pressed": "return.png",
+            "Released": "return.png"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "interaction_return_to_main",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "back_to_main"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "Main"
+            }
+          }
+        ]
+      }
+    ],
+    "CustomContainerDefinitions": [],
+    "Name": "sorting_visualizer",
+    "Resolution": {
+      "Width": 480,
+      "Height": 272
+    },
+    "SelectedColorDepth": 16,
+    "StartupScreenName": "Main",
+    "SelectedStartupLanguage": "GB",
+    "TouchGfxPath": "../Middlewares/ST/touchgfx",
+    "UIPath": ".",
+    "AvailableColorDepths": [
+      16
+    ],
+    "AvailableLCDs": {
+      "16": "LCD16bpp"
+    },
+    "AvailableSections": [
+      "ExtFlashSection",
+      "IntFlashSection"
+    ],
+    "AvailableResolutions": [
+      {
+        "Width": 480,
+        "Height": 272
+      }
+    ],
+    "PhysicalButtons": [],
+    "FrameworkFeatures": {
+      "LCD16bpp": {
+        "Id": "LCD16bpp",
+        "IsEnabled": true
+      }
+    },
+    "GenerateAssetsCommand": "make -f simulator/gcc/Makefile assets -j8",
+    "PostGenerateCommand": "touchgfx update_project --project-file=simulator/msvs/Application.vcxproj",
+    "PostGenerateTargetCommand": "touchgfx update_project",
+    "CompileSimulatorCommand": "make -f simulator/gcc/Makefile -j8",
+    "RunSimulatorCommand": "build\\bin\\simulator.exe",
+    "CompileTargetCommand": "make -f ../gcc/Makefile -j8",
+    "FlashTargetCommand": "make -f ../gcc/Makefile flash -j8",
+    "LandscapeSkinX": 0,
+    "LandscapeSkinY": 0,
+    "PortraitSkinX": 0,
+    "PortraitSkinY": 0,
+    "DisplayOrientation": "Landscape",
+    "Family": "STM32F7",
+    "SubFamily": "STM32F7x6",
+    "Toolchain": "STM32CubeIDE",
+    "Platform": "m7",
+    "ProjectFile": "../STM32F746G_DISCO.ioc",
+    "OptionalComponentsRoot": "../Middlewares/ST/touchgfx_components",
+    "OptionalComponents": [],
+    "AdditionalFeatures": [
+      "Vector",
+      "Video"
+    ]
+  },
+  "Version": "4.22.0",
+  "CreatedBy": "4.22.0"
+}
