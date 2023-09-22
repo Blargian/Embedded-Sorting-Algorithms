@@ -22,13 +22,13 @@ SelectorViewBase::SelectorViewBase() :
     swipeContainer1.setSwipeCutoff(50);
     swipeContainer1.setEndSwipeElasticWidth(50);
 
-    MergeSort.setWidth(454);
-    MergeSort.setHeight(250);
-    MergeSortIcon.setXY(39, 61);
-    MergeSortIcon.setBitmap(touchgfx::Bitmap(BITMAP_CONSOLIDATE_ID));
-    MergeSort.add(MergeSortIcon);
+    QuickSort.setWidth(454);
+    QuickSort.setHeight(250);
+    QuickSortIcon.setXY(39, 61);
+    QuickSortIcon.setBitmap(touchgfx::Bitmap(BITMAP_FAST_TIME_ID));
+    QuickSort.add(QuickSortIcon);
 
-    swipeContainer1.add(MergeSort);
+    swipeContainer1.add(QuickSort);
 
     BubbleSort.setWidth(454);
     BubbleSort.setHeight(250);
@@ -38,19 +38,20 @@ SelectorViewBase::SelectorViewBase() :
 
     swipeContainer1.add(BubbleSort);
 
-    QuickSort.setWidth(454);
-    QuickSort.setHeight(250);
-    QuickSortIcon.setXY(39, 61);
-    QuickSortIcon.setBitmap(touchgfx::Bitmap(BITMAP_FAST_TIME_ID));
-    QuickSort.add(QuickSortIcon);
+    MergeSort.setWidth(454);
+    MergeSort.setHeight(250);
+    MergeSortIcon.setXY(39, 61);
+    MergeSortIcon.setBitmap(touchgfx::Bitmap(BITMAP_CONSOLIDATE_ID));
+    MergeSort.add(MergeSortIcon);
 
-    swipeContainer1.add(QuickSort);
+    swipeContainer1.add(MergeSort);
 
     swipeContainer1.setSelectedPage(2);
     add(swipeContainer1);
 
     select.setXY(404, 196);
     select.setBitmaps(touchgfx::Bitmap(BITMAP_CHECK_MARK_GREY_ID), touchgfx::Bitmap(BITMAP_CHECK_MARK_ID));
+    select.setAction(buttonCallback);
     add(select);
 
     back_to_main.setXY(404, 10);
@@ -77,5 +78,12 @@ void SelectorViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src
         //When back_to_main clicked change screen to Main
         //Go to Main with screen transition towards West
         application().gotoMainScreenSlideTransitionWest();
+    }
+    if (&src == &select)
+    {
+        //selectAlgorithm
+        //When select clicked call virtual function
+        //Call selectAlgorithm
+        selectAlgorithm();
     }
 }

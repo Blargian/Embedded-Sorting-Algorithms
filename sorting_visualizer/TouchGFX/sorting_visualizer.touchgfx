@@ -49,7 +49,7 @@
             "GraphDrawers": [
               {
                 "Type": "HistogramDrawer",
-                "BarWidth": 4,
+                "BarWidth": 1,
                 "Color": {
                   "Red": 20,
                   "Green": 151,
@@ -126,23 +126,23 @@
             "IndicatorImageNormal": "__generated\\alternate_theme_images_widgets_swipecontainer_medium_off_normal.png",
             "IndicatorImageHighlight": "__generated\\alternate_theme_images_widgets_swipecontainer_medium_on_active.png",
             "EndSwipeElasticWidth": 50,
-            "SelectedPage": "QuickSort",
+            "SelectedPage": "MergeSort",
             "Preset": "alternate_theme\\presets\\swipecontainer\\medium_active.json",
             "Components": [
               {
                 "Type": "Container",
-                "Name": "MergeSort",
+                "Name": "QuickSort",
                 "Width": 454,
                 "Height": 250,
                 "Components": [
                   {
                     "Type": "Image",
-                    "Name": "MergeSortIcon",
+                    "Name": "QuickSortIcon",
                     "X": 39,
                     "Y": 61,
                     "Width": 128,
                     "Height": 128,
-                    "RelativeFilename": "consolidate.png"
+                    "RelativeFilename": "fast-time.png"
                   }
                 ]
               },
@@ -165,18 +165,18 @@
               },
               {
                 "Type": "Container",
-                "Name": "QuickSort",
+                "Name": "MergeSort",
                 "Width": 454,
                 "Height": 250,
                 "Components": [
                   {
                     "Type": "Image",
-                    "Name": "QuickSortIcon",
+                    "Name": "MergeSortIcon",
                     "X": 39,
                     "Y": 61,
                     "Width": 128,
                     "Height": 128,
-                    "RelativeFilename": "fast-time.png"
+                    "RelativeFilename": "consolidate.png"
                   }
                 ]
               }
@@ -215,6 +215,17 @@
               "ScreenTransitionType": "ScreenTransitionSlide",
               "ScreenTransitionDirection": "West",
               "ActionComponent": "Main"
+            }
+          },
+          {
+            "InteractionName": "selectAlgorithm",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "select"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "selectAlgorithm"
             }
           }
         ]

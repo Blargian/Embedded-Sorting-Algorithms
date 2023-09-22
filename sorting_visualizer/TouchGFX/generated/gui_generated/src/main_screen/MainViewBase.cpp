@@ -37,7 +37,7 @@ MainViewBase::MainViewBase() :
     histogram.setGraphRangeX(0, 256);
     histogram.setGraphRangeY(0, 256);
     histogramHistogram1.setColor(touchgfx::Color::getColorFromRGB(20, 151, 197));
-    histogramHistogram1.setBarWidth(4);
+    histogramHistogram1.setBarWidth(1);
     histogramHistogram1.setBaseline(0);
     histogram.addGraphElement(histogramHistogram1);
 

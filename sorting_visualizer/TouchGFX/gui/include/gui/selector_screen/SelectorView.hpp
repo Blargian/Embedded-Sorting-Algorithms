@@ -11,6 +11,7 @@ public:
     virtual ~SelectorView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+    virtual void selectAlgorithm();
 protected:
 };
 

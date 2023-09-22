@@ -27,6 +27,9 @@ public:
 
     virtual ~SelectorPresenter() {}
 
+    virtual void userSetAlgorithm(AlgorithmType a);
+    virtual AlgorithmType getCurrentSelectedAlgorithm() const;
+
 private:
     SelectorPresenter();
 

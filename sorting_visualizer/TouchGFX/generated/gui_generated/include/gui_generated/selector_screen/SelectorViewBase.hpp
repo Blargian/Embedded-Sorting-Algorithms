@@ -21,6 +21,14 @@ public:
     virtual ~SelectorViewBase();
     virtual void setupScreen();
 
+    /*
+     * Virtual Action Handlers
+     */
+    virtual void selectAlgorithm()
+    {
+        // Override and implement this function in Selector
+    }
+
 protected:
     FrontendApplication& application() {
         return *static_cast<FrontendApplication*>(touchgfx::Application::getInstance());
@@ -32,12 +40,12 @@ protected:
     touchgfx::Box __background;
     touchgfx::Box bg;
     touchgfx::SwipeContainer swipeContainer1;
-    touchgfx::Container MergeSort;
-    touchgfx::Image MergeSortIcon;
-    touchgfx::Container BubbleSort;
-    touchgfx::Image BubbleSortIcon;
     touchgfx::Container QuickSort;
     touchgfx::Image QuickSortIcon;
+    touchgfx::Container BubbleSort;
+    touchgfx::Image BubbleSortIcon;
+    touchgfx::Container MergeSort;
+    touchgfx::Image MergeSortIcon;
     touchgfx::ToggleButton select;
     touchgfx::Button back_to_main;
 

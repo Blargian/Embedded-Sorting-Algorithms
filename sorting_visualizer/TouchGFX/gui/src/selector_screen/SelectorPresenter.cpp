@@ -16,3 +16,12 @@ void SelectorPresenter::deactivate()
 {
 
 }
+
+void SelectorPresenter::userSetAlgorithm(AlgorithmType algo)
+{
+	model->SetAlgorithm(algo);
+}
+
+AlgorithmType SelectorPresenter::getCurrentSelectedAlgorithm() const {
+	return model->GetAlgorithm();
+}
