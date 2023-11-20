@@ -3,6 +3,7 @@
 
 #include <gui/model/ModelListener.hpp>
 #include <mvp/Presenter.hpp>
+#include <vector>
 
 using namespace touchgfx;
 
@@ -26,6 +27,9 @@ public:
     virtual void deactivate();
 
     virtual ~MainPresenter() {}
+    virtual void storeHistogramPoint(const int p) const;
+    virtual std::vector<int>* getHistogramDataPtr() const;
+    void clearHistogramDataPoints();
 
 private:
     MainPresenter();

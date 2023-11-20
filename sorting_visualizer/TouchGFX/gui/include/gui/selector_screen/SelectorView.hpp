@@ -12,6 +12,7 @@ public:
     virtual void setupScreen();
     virtual void tearDownScreen();
     virtual void selectAlgorithm();
+    virtual uint8_t getCurrentPageNumber() const;
 protected:
 };
 

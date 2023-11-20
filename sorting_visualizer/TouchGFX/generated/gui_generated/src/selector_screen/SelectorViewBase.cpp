@@ -49,11 +49,6 @@ SelectorViewBase::SelectorViewBase() :
     swipeContainer1.setSelectedPage(2);
     add(swipeContainer1);
 
-    select.setXY(404, 196);
-    select.setBitmaps(touchgfx::Bitmap(BITMAP_CHECK_MARK_GREY_ID), touchgfx::Bitmap(BITMAP_CHECK_MARK_ID));
-    select.setAction(buttonCallback);
-    add(select);
-
     back_to_main.setXY(404, 10);
     back_to_main.setBitmaps(touchgfx::Bitmap(BITMAP_RETURN_ID), touchgfx::Bitmap(BITMAP_RETURN_ID));
     back_to_main.setAction(buttonCallback);
@@ -78,12 +73,5 @@ void SelectorViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src
         //When back_to_main clicked change screen to Main
         //Go to Main with screen transition towards West
         application().gotoMainScreenSlideTransitionWest();
-    }
-    if (&src == &select)
-    {
-        //selectAlgorithm
-        //When select clicked call virtual function
-        //Call selectAlgorithm
-        selectAlgorithm();
     }
 }

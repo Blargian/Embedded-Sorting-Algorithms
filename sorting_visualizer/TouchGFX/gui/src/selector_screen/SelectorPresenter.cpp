@@ -19,9 +19,14 @@ void SelectorPresenter::deactivate()
 
 void SelectorPresenter::userSetAlgorithm(AlgorithmType algo)
 {
-	model->SetAlgorithm(algo);
+	model->setAlgorithm(algo);
 }
 
 AlgorithmType SelectorPresenter::getCurrentSelectedAlgorithm() const {
-	return model->GetAlgorithm();
+	return model->getAlgorithm();
 }
+
+uint8_t SelectorPresenter::getCurrentPageNumber() const{
+	return view.getCurrentPageNumber();
+}
+

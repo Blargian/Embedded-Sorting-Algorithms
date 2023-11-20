@@ -11,7 +11,6 @@
 #include <touchgfx/containers/SwipeContainer.hpp>
 #include <touchgfx/containers/Container.hpp>
 #include <touchgfx/widgets/Image.hpp>
-#include <touchgfx/widgets/ToggleButton.hpp>
 #include <touchgfx/widgets/Button.hpp>
 
 class SelectorViewBase : public touchgfx::View<SelectorPresenter>
@@ -20,14 +19,6 @@ public:
     SelectorViewBase();
     virtual ~SelectorViewBase();
     virtual void setupScreen();
-
-    /*
-     * Virtual Action Handlers
-     */
-    virtual void selectAlgorithm()
-    {
-        // Override and implement this function in Selector
-    }
 
 protected:
     FrontendApplication& application() {
@@ -46,7 +37,6 @@ protected:
     touchgfx::Image BubbleSortIcon;
     touchgfx::Container MergeSort;
     touchgfx::Image MergeSortIcon;
-    touchgfx::ToggleButton select;
     touchgfx::Button back_to_main;
 
 private:

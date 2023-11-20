@@ -29,6 +29,7 @@ public:
 
     virtual void userSetAlgorithm(AlgorithmType a);
     virtual AlgorithmType getCurrentSelectedAlgorithm() const;
+    virtual uint8_t getCurrentPageNumber() const;
 
 private:
     SelectorPresenter();

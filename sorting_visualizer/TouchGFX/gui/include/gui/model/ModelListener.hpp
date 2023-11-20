@@ -15,6 +15,10 @@ public:
         model = m;
     }
 
+    virtual void forceButtonState(bool b){};
+    virtual void invalidateSelectButton(){};
+    virtual uint8_t getCurrentPageNumber() const{};
+
 protected:
     Model* model;
 };

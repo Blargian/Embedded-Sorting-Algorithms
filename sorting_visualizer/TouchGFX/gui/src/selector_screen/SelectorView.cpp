@@ -17,6 +17,8 @@ void SelectorView::setupScreen()
 
 void SelectorView::tearDownScreen()
 {
+	AlgorithmType algo = static_cast<AlgorithmType>(swipeContainer1.getSelectedPage());
+	presenter->userSetAlgorithm(algo);
     SelectorViewBase::tearDownScreen();
 }
 
@@ -24,3 +26,8 @@ void SelectorView::selectAlgorithm(){
 	AlgorithmType algo = static_cast<AlgorithmType>(swipeContainer1.getSelectedPage());
 	presenter->userSetAlgorithm(algo);
 }
+
+uint8_t SelectorView::getCurrentPageNumber() const {
+	return swipeContainer1.getSelectedPage();
+}
+

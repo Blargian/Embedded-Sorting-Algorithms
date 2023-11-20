@@ -38,14 +38,13 @@
             "Y": 11,
             "Width": 356,
             "Height": 226,
-            "DataSeed": 766668840,
+            "DataSeed": 2016282175,
             "NumberOfValues": 1000,
             "MaxX": 256.0,
             "PrecisionX": "1",
             "MaxY": 256.0,
             "PrecisionY": "1",
             "XAxisScale": 1.0,
-            "InsertRandomValues": true,
             "GraphDrawers": [
               {
                 "Type": "HistogramDrawer",
@@ -183,16 +182,6 @@
             ]
           },
           {
-            "Type": "ToggleButton",
-            "Name": "select",
-            "X": 404,
-            "Y": 196,
-            "Width": 64,
-            "Height": 64,
-            "Pressed": "check-mark.png",
-            "Released": "check-mark_grey.png"
-          },
-          {
             "Type": "Button",
             "Name": "back_to_main",
             "X": 404,
@@ -220,8 +209,7 @@
           {
             "InteractionName": "selectAlgorithm",
             "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "select"
+              "Type": "TriggerClicked"
             },
             "Action": {
               "Type": "ActionCustom",

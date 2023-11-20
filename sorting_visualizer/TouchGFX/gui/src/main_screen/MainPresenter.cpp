@@ -16,3 +16,15 @@ void MainPresenter::deactivate()
 {
 
 }
+
+void MainPresenter::storeHistogramPoint(const int p) const {
+	model->addPointToHistogram(p);
+}
+
+std::vector<int>* MainPresenter::getHistogramDataPtr() const {
+	return model->getHistogramDataPtr();
+}
+
+void MainPresenter::clearHistogramDataPoints() {
+	model->clearHistogram();
+}

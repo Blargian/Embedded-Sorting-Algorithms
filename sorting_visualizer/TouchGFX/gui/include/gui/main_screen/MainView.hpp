@@ -3,6 +3,7 @@
 
 #include <gui_generated/main_screen/MainViewBase.hpp>
 #include <gui/main_screen/MainPresenter.hpp>
+#include <vector>
 
 class MainView : public MainViewBase
 {
