@@ -1,4 +1,4 @@
-# STM32 Sorting Algorithm Visualizer
+# 🚧 STM32 Sorting Algorithm Visualizer (in progress) 🚧
 
 A sorting algorithm visualizer for the STM32F746G-DISCO board using FreeRTOS and TouchGFX. 
 
