@@ -42,7 +42,8 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN PV */
-
+volatile int last = 0;
+volatile int diff = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/

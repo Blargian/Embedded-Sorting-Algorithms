@@ -72,6 +72,7 @@ void vApplicationIdleHook( void )
 }
 /* USER CODE END 2 */
 
+
 /* Private application code --------------------------------------------------*/
 /* USER CODE BEGIN Application */
 

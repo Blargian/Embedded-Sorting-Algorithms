@@ -1,0 +1,9 @@
+# Development notes 
+
+## LTDC 
+
+The LTDC is an LCD TFT Display Controller internal to the microcontroller. It's purpose is to update the framebuffer and then transfer the data to the display itself. More information about it can be found in application note [AN4861](https://www.st.com/resource/en/application_note/an4861-lcdtft-display-controller-ltdc-on-stm32-mcus-stmicroelectronics.pdf)
+
+The frame buffer size can be calculated by `width x height x bpp`. So, for example, a common 24 bit display with resolution 480 x 272 will take up 480x272x24/8 bytes = 391 680 bytes. 
+
+Sometimes this framebuffer will not fit into the internal RAM. 
